@@ -1,0 +1,30 @@
+services:
+  - type: web
+    name: vj-filter-bot
+    env: python
+    region: oregon
+    plan: free
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "python3 bot.py"
+    repo: https://github.com/tmayur/VJ-FILTER-BOT
+    branch: main
+    autoDeploy: true
+    envVars:
+      - key: BOT_TOKEN
+        sync: false
+      - key: API_ID
+        sync: false
+      - key: API_HASH
+        sync: false
+      - key: OWNER_ID
+        sync: false
+      - key: DB_URI
+        sync: false
+      - key: LOG_CHANNEL
+        sync: false
+      - key: FORCE_SUB
+        sync: false
+      - key: START_PIC
+        sync: false
+      - key: PORT
+        value: 10000
